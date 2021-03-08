@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-08T17:43:43.395Z" agent="5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36" etag="pvlruyRR0aUmxA9Bl8L4" version="14.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-08T21:50:49.292Z" agent="5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36" etag="-kIGvsr8MokeuS_X_sOy" version="14.4.4" type="github">
   <diagram id="7ptF0DMkgPMZiPhxQQ7P" name="Page-1">
     <mxGraphModel dx="904" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -42,6 +42,21 @@
         </mxCell>
         <mxCell id="8_1-14mWKLSAez9oSBJj-4" value="Instantiates DataPrep class which goes through entire process&lt;br&gt;of gathering, imputing, validating, preparing, and transforming data etc&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="395" y="295" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8_1-14mWKLSAez9oSBJj-5" value="Instantiates Data Analysis Class which analyzes, summarizes,&lt;br&gt;and plots data ... things like corellation matrices etc&amp;nbsp;&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="385" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8_1-14mWKLSAez9oSBJj-6" value="Create model class, train model, hold model &lt;br&gt;attributes and metrics etc." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="445" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8_1-14mWKLSAez9oSBJj-7" value="Creates table to evaluate model performance&lt;br&gt;Plots prediction from sample from dataset" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="515" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8_1-14mWKLSAez9oSBJj-8" value="For use in building secondary models&lt;br&gt;For use in forecasting data&amp;nbsp;&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="585" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8_1-14mWKLSAez9oSBJj-9" value="Plot the above metrics and forecast data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="700" width="230" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
