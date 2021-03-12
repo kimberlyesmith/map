@@ -1,0 +1,62 @@
+Azure Notes
+
+- Set up Azure Machine learning Workspace
+	https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace
+- install azure dependencies and configure local environment 
+	https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-environment#local
+- create score.py (Azure version of your app.py rest service start up script) 
+	- modify json input/output
+	- declare all files you load in as global
+- create Deployment Script 
+- create .yml file (from requirements.txt)
+- create directory with all model pickle files, numpy files, custom written files 
+- 
+YAML file
+1 - use current requirements.txt file and add the following for AzureML execution, history, and data prep:
+  - azureml-defaults
+  
+
+Deployment Script 
+1 - Connect to Azure Machine Learning Workspace
+2 - Create Python Virtual Environment
+3 - Specify the rest end point script (score.py) and it's location
+4 - Specify the deployment configuration (CPU/RAM)
+5 - Register all depedencies (not in virtual environment) as a single model object
+6 - Deploy the service (delete current service if previously deployed)
+7 - Grab URI endpoint 
+
+Score.py (REST endpoint) script  
+1 - In init() method load all file objects (.pkl, .npy, etc) into script
+	- declare all objects global
+2 - In run() method, change line which loads in json object to 
+	json.loads(raw_data)
+3 - Copy remainder of script as is
+4 - at the end of run() method, use json.dumps to return final json response
+5 - Can add the following to debug: 
+    except Exception as e:   ### Return any exception duing execution of the code
+
+        ### Return results back
+        final_return = {}
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+
+        # For debugging, return back error, file name, and line number 
+        final_return['Error'] = (str(e) + str(exc_type) + str(fname) + str(exc_tb.tb_lineno))
+        return json.dumps(final_return)
+
+Directory with Dependencies
+- should contain any custom module python files, pickle files, numpy files, etc that you want to have access 
+to in the service
+
+ukp;.
+
+
+Troubleshooting Tips:
+- must make variables global when you load them in 
+- must use correct json_loads stuff
+- was helpful to print out the line number and error in a try/except block of code
+- for any of your own custom files you have written, can use import statement  
+
+To do:  side by side of score.py vs. mlccm_app.py with changes highlighted
+		create list of trouble shooting tips 
+		create flow diagram? 
